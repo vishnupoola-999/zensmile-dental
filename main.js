@@ -22,27 +22,38 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // 3. ZenCursor "Shining" Answers
+    // 3. Nurse Assistant Conversational Logic
     const zenCursor = document.getElementById('zen-cursor');
     const zenBubble = document.getElementById('zen-bubble');
-    const answers = [
-        "Need a dentist? Book online!",
-        "Specialists in South Mumbai at your service.",
-        "We're open 10 AM to 10 PM daily.",
-        "Have any dental pain? Call us now!",
-        "Check out our smile gallery!"
+    
+    const messages = [
+        "Hi! I'm Nurse Sarah. Need help booking an appointment?",
+        "We have slots available this evening. Would you like to reserve one?",
+        "You can also call us directly at Apollo Bandar. Shall I show you the number?",
+        "Our specialists are MDS experts in Orthodontics and Implants!",
+        "Feel free to ask me anything about our services!"
     ];
-    let answerIndex = 0;
+    let msgIndex = 0;
+    let isTyping = false;
 
     if (zenCursor && zenBubble) {
         zenCursor.addEventListener('click', () => {
-            zenBubble.textContent = answers[answerIndex];
+            if (isTyping) return;
+
+            isTyping = true;
+            zenBubble.innerHTML = '<div class="typing-dots"><span></span><span></span><span></span></div>';
             zenBubble.classList.add('active');
-            answerIndex = (answerIndex + 1) % answers.length;
-            
+
             setTimeout(() => {
-                zenBubble.classList.remove('active');
-            }, 3000);
+                zenBubble.textContent = messages[msgIndex];
+                msgIndex = (msgIndex + 1) % messages.length;
+                isTyping = false;
+                
+                // Keep the bubble visible longer for reading
+                setTimeout(() => {
+                    if (!isTyping) zenBubble.classList.remove('active');
+                }, 5000);
+            }, 1000);
         });
     }
 
