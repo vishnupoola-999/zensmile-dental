@@ -211,9 +211,22 @@ a {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    opacity: 0.45; /* Maximum clarity requested */
-    filter: saturate(1.1) brightness(1.1);
+    opacity: 0.8; /* Maximized clarity as requested */
+    filter: saturate(1.1) brightness(0.9); /* Slight brightness reduction for text contrast */
     z-index: 0;
+}
+
+.hero::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, rgba(255,255,255,0.4), rgba(255,255,255,0.7));
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2; /* Bring content above overlay */
 }
 
 .hero-content {
@@ -337,45 +350,137 @@ a {
     gap: 15px;
 }
 
-.zen-cursor {
-    width: 70px; /* Slightly larger for the face */
-    height: 70px;
-    background: url('zensmile_nurse_icon.png') no-repeat center center/cover;
-    border-radius: 50%;
+/* Nurse Sarah Chat UI */
+.zen-cursor-container {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    z-index: 9999;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 15px;
+}
+
+.chat-window {
+    width: 320px;
+    height: 450px;
+    background: var(--bg-white);
+    border-radius: var(--radius-lg);
+    box-shadow: 0 10px 40px rgba(0,0,0,0.15);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    transform: translateY(20px) scale(0.95);
+    opacity: 0;
+    pointer-events: none;
+    transition: var(--transition);
+    border: 1px solid var(--primary-light);
+}
+
+.chat-window.active {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    pointer-events: auto;
+}
+
+.chat-header {
+    background: var(--primary);
+    color: white;
+    padding: 1.25rem;
     display: flex;
     align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    position: relative;
-    box-shadow: 0 0 25px rgba(0, 131, 143, 0.5);
-    transition: var(--transition);
-    border: 3px solid var(--white);
+    gap: 12px;
 }
 
-.zen-cursor:hover {
-    transform: scale(1.1);
+.chat-header img {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    border: 2px solid white;
 }
 
-.zen-answer-bubble {
-    background: var(--bg-white);
-    padding: 15px 25px;
-    border-radius: 20px 20px 0 20px;
-    border: 1px solid var(--primary-light);
-    max-width: 280px;
-    font-size: 0.95rem;
-    font-weight: 500;
-    box-shadow: var(--shadow-soft);
-    opacity: 0;
-    transform: translateY(20px);
-    transition: var(--transition);
-    pointer-events: none;
+.chat-history {
+    flex: 1;
+    padding: 1rem;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    background: #f8fafb;
+}
+
+.msg {
+    max-width: 80%;
+    padding: 10px 15px;
+    border-radius: 18px;
+    font-size: 0.9rem;
     line-height: 1.4;
 }
 
-.zen-answer-bubble.active {
-    opacity: 1;
-    transform: translateY(0);
-    pointer-events: auto;
+.msg-bot {
+    background: white;
+    color: var(--text-main);
+    align-self: flex-start;
+    border-bottom-left-radius: 4px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.msg-user {
+    background: var(--primary);
+    color: white;
+    align-self: flex-end;
+    border-bottom-right-radius: 4px;
+}
+
+.chat-input-area {
+    padding: 1rem;
+    background: white;
+    border-top: 1px solid var(--primary-light);
+    display: flex;
+    gap: 10px;
+}
+
+.chat-input-area input {
+    flex: 1;
+    border: 1px solid var(--primary-light);
+    border-radius: 20px;
+    padding: 8px 15px;
+    outline: none;
+    font-size: 0.9rem;
+}
+
+.chat-send-btn {
+    background: var(--primary);
+    color: white;
+    border: none;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: var(--transition);
+}
+
+.chat-send-btn:hover {
+    transform: scale(1.1);
+}
+
+.zen-cursor {
+    width: 70px;
+    height: 70px;
+    background: url('zensmile_nurse_icon.png') no-repeat center center/cover;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 5px 20px rgba(0,131,143,0.3);
+    border: 3px solid white;
+    transition: var(--transition);
+}
+
+.zen-cursor:hover {
+    transform: scale(1.05);
 }
 
 .typing-dots {

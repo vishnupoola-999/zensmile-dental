@@ -22,39 +22,70 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // 3. Nurse Assistant Conversational Logic
+    // 3. Nurse Sarah 2-Way Chat Logic
     const zenCursor = document.getElementById('zen-cursor');
-    const zenBubble = document.getElementById('zen-bubble');
-    
-    const messages = [
-        "Hi! I'm Nurse Sarah. Need help booking an appointment?",
-        "We have slots available this evening. Would you like to reserve one?",
-        "You can also call us directly at Apollo Bandar. Shall I show you the number?",
-        "Our specialists are MDS experts in Orthodontics and Implants!",
-        "Feel free to ask me anything about our services!"
-    ];
-    let msgIndex = 0;
-    let isTyping = false;
+    const chatWindow = document.getElementById('chat-window');
+    const closeChat = document.getElementById('close-chat');
+    const chatHistory = document.getElementById('chat-history');
+    const chatInput = document.getElementById('chat-input');
+    const chatSend = document.getElementById('chat-send');
 
-    if (zenCursor && zenBubble) {
+    const responses = {
+        "appointment": "You can book an appointment by going to our Appointment page or calling us at +91 00000 00000.",
+        "booking": "Would you like me to show you our available slots for today?",
+        "service": "We offer Cosmetic Dentistry, Implants, and Braces. Which one are you interested in?",
+        "price": "Our checkups start from ₹500. Specific treatment costs depend on the diagnosis.",
+        "location": "Our clinic is located at Shop No. 9, Beside Jain Temple, Apollo Bandar, Colaba.",
+        "hours": "We are open every day from 10:00 AM to 10:00 PM.",
+        "default": "That's interesting! Would you like to speak with one of our specialists?"
+    };
+
+    function addMessage(text, sender) {
+        const msgDiv = document.createElement('div');
+        msgDiv.className = `msg msg-${sender}`;
+        msgDiv.textContent = text;
+        chatHistory.appendChild(msgDiv);
+        chatHistory.scrollTop = chatHistory.scrollHeight;
+    }
+
+    function botReply(text) {
+        setTimeout(() => {
+            addMessage(text, 'bot');
+        }, 800);
+    }
+
+    if (zenCursor && chatWindow) {
         zenCursor.addEventListener('click', () => {
-            if (isTyping) return;
-
-            isTyping = true;
-            zenBubble.innerHTML = '<div class="typing-dots"><span></span><span></span><span></span></div>';
-            zenBubble.classList.add('active');
-
-            setTimeout(() => {
-                zenBubble.textContent = messages[msgIndex];
-                msgIndex = (msgIndex + 1) % messages.length;
-                isTyping = false;
-                
-                // Keep the bubble visible longer for reading
-                setTimeout(() => {
-                    if (!isTyping) zenBubble.classList.remove('active');
-                }, 5000);
-            }, 1000);
+            chatWindow.classList.toggle('active');
         });
+
+        closeChat.addEventListener('click', () => {
+            chatWindow.classList.remove('active');
+        });
+
+        chatSend.addEventListener('click', sendMessage);
+        chatInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') sendMessage();
+        });
+
+        function sendMessage() {
+            const text = chatInput.value.trim().toLowerCase();
+            if (!text) return;
+
+            addMessage(chatInput.value.trim(), 'user');
+            chatInput.value = '';
+
+            // Simple keyword matching
+            let found = false;
+            for (let key in responses) {
+                if (text.includes(key)) {
+                    botReply(responses[key]);
+                    found = true;
+                    break;
+                }
+            }
+            if (!found) botReply(responses.default);
+        }
     }
 
     // 3. Reveal on Scroll (Intersection Observer)
