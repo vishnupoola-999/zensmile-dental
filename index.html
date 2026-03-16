@@ -3,244 +3,150 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ZenSmile Dental Clinic – Advanced Dental Care in Colaba, Mumbai</title>
-    <meta name="description" content="ZenSmile Dental Clinic in Colaba, South Mumbai offers advanced dental care including implants, cosmetics, and orthodontics in a premium, comforting environment.">
+    <title>ZenSmile Dental Clinic | Advanced Dental Care Mumbai</title>
+    <meta name="description" content="Premium mobile-first dental clinic website in Colaba, South Mumbai. Specialist care in a comforting environment.">
     <link rel="stylesheet" href="styles.css">
-    <!-- Font Awesome for Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- Local Business Schema -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Dentist",
-      "name": "ZenSmile Dental Clinic",
-      "image": "zensmile_hero_clinic_1773650674306.png",
-      "@id": "",
-      "url": "index.html",
-      "telephone": "+910000000000",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "Shop No. 9, Besides Jain Temple, Pestonji Street, near Nariman House, Apollo Bandar",
-        "addressLocality": "Colaba, Mumbai",
-        "postalCode": "400005",
-        "addressCountry": "IN"
-      },
-      "geo": {
-        "@type": "GeoCoordinates",
-        "latitude": 18.9254843,
-        "longitude": 72.8295625
-      },
-      "openingHoursSpecification": {
-        "@type": "OpeningHoursSpecification",
-        "dayOfWeek": [
-          "Monday",
-          "Tuesday",
-          "Wednesday",
-          "Thursday",
-          "Friday",
-          "Saturday",
-          "Sunday"
-        ],
-        "opens": "10:00",
-        "closes": "22:00"
-      }
-    }
-    </script>
 </head>
 <body class="loading">
 
-    <!-- Preloader -->
     <div id="preloader">
-        <div class="loader-logo">ZenSmile</div>
-        <div class="loader-bar"></div>
+        <div class="loader-content">
+            <div class="loader-text">ZenSmile</div>
+            <div class="loader-bar"></div>
+        </div>
     </div>
 
-    <!-- Navbar -->
     <nav class="navbar">
-        <div class="container nav-container">
+        <div class="container nav-flex">
             <a href="index.html" class="logo">
-                <i class="fas fa-tooth" style="color: var(--primary-teal); font-size: 1.8rem;"></i>
-                <span class="logo-text">ZenSmile</span>
+                <i class="fas fa-tooth"></i>
+                <span class="font-heading">ZenSmile</span>
             </a>
             <ul class="nav-links">
                 <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About</a></li>
                 <li><a href="services.html">Services</a></li>
-                <li><a href="gallery.html">Smile Gallery</a></li>
-                <li><a href="contact.html">Contact</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="contact.html">Appointment</a></li>
             </ul>
-            <div class="menu-toggle" id="menu-toggle">
+            <div class="menu-trigger" id="menu-toggle">
                 <span></span>
                 <span></span>
                 <span></span>
             </div>
-            <a href="contact.html" class="btn btn-primary" id="header-cta">Book Now</a>
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <section class="hero-section">
-        <div class="hero-overlay"></div>
-        <div class="container">
-            <div class="hero-content reveal">
-                <span class="badge">Colaba's Premier Dental Destination</span>
-                <h1 class="heading-lg">ZenSmile Dental Clinic – Advanced Dental Care in South Mumbai.</h1>
-                <p class="hero-subtext">Where comfort meets care. Our team of specialists offers premium dental solutions from routine check-ups to advanced smile transformations.</p>
-                <div class="hero-btns">
-                    <a href="contact.html" class="btn btn-primary">Book Appointment</a>
-                    <a href="tel:+910000000000" class="btn btn-outline">Call Now</a>
+    <main>
+        <section class="hero">
+            <img src="zensmile_hero_clinic_1773650674306.png" alt="" class="hero-img-bg">
+            <div class="container hero-content reveal">
+                <span class="badge" style="display:inline-block; padding: 0.5rem 1rem; background: var(--primary-light); color: var(--primary); border-radius: 50px; margin-bottom: 1rem; font-weight: 600; font-size: 0.85rem;">Colaba's Premier Dental Destination</span>
+                <h1>Advanced Dental Care in South Mumbai</h1>
+                <p>Welcome to ZenSmile where comfort meets care. Our specialists offer comprehensive treatments designed to meet all your dental needs.</p>
+                <div class="hero-actions">
+                    <a href="contact.html" class="btn btn-primary">Book Consultation</a>
+                    <a href="tel:+910000000000" class="btn btn-outline"><i class="fas fa-phone-alt" style="margin-right: 8px;"></i> Call Now</a>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Quick Info Strip -->
-    <section class="info-strip reveal delay-1">
-        <div class="container strip-grid">
-            <div class="info-item">
-                <i class="fas fa-map-marker-alt"></i>
-                <div>
-                    <h4>Visit Us</h4>
-                    <p>Apollo Bandar, Colaba</p>
-                </div>
-            </div>
-            <div class="info-item border-left">
-                <i class="fas fa-clock"></i>
-                <div>
-                    <h4>Open Hours</h4>
-                    <p>10:00 AM – 10:00 PM</p>
-                </div>
-            </div>
-            <div class="info-item border-left">
-                <i class="fas fa-route"></i>
-                <div>
-                    <h4>Get Directions</h4>
-                    <p><a href="https://maps.app.goo.gl/ycZhYj2VuiGeoVY66" target="_blank" style="color: var(--primary-teal);">Google Maps <i class="fas fa-external-link-alt" style="font-size: 0.8rem;"></i></a></p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- About Snippet -->
-    <section class="section-padding about-teaser reveal">
-        <div class="container grid-2">
-            <div class="about-image reveal delay-1">
-                <img src="zensmile_dentist_work_1773650717336.png" alt="ZenSmile Dentist at work" class="img-responsive rounded-card">
-            </div>
-            <div class="about-text">
-                <h2 class="heading-md">Individualized Attention, Exceptional Outcomes</h2>
-                <p>Welcome to ZenSmile Dental Clinic, where we believe your journey to a perfect smile should be as comfortable as it is life-changing. Our specialists provide a comprehensive range of treatments designed to meet every dental need in a warm, welcoming environment.</p>
-                <ul class="check-list">
-                    <li><i class="fas fa-check-circle"></i> Experienced Specialists</li>
-                    <li><i class="fas fa-check-circle"></i> Advanced Medical Equipment</li>
-                    <li><i class="fas fa-check-circle"></i> Strict Hygiene Protocols</li>
-                </ul>
-                <a href="about.html" class="btn btn-outline" style="margin-top: 20px;">Learn More About Us</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Specialities Section -->
-    <section class="section-padding bg-soft reveal" id="specialities">
-        <div class="container">
-            <div class="section-header text-center reveal delay-1">
-                <h2 class="heading-md">Our Specialities</h2>
-                <p>Precision care for every smile, delivered with a gentle touch.</p>
-            </div>
-            <div class="card-grid">
-                <div class="card">
-                    <i class="fas fa-sparkles card-icon"></i>
-                    <h3>Cosmetic Dentistry</h3>
-                    <p>Smile design, teeth whitening, and porcelain veneers for a flawless look.</p>
-                </div>
-                <div class="card">
-                    <i class="fas fa-tooth card-icon"></i>
-                    <h3>Dental Implants</h3>
-                    <p>Permanent and natural-looking solutions for missing teeth.</p>
-                </div>
-                <div class="card">
-                    <i class="fas fa-align-center card-icon"></i>
-                    <h3>Orthodontics</h3>
-                    <p>Precision alignment with traditional braces and modern clear aligners.</p>
-                </div>
-                <div class="card">
-                    <i class="fas fa-child card-icon"></i>
-                    <h3>Pediatric Dentistry</h3>
-                    <p>Gentle dental care specifically designed for our youngest patients.</p>
-                </div>
-                <div class="card">
-                    <i class="fas fa-shield-heart card-icon"></i>
-                    <h3>Periodontal Care</h3>
-                    <p>Comprehensive treatment for gum health and periodontal disease.</p>
-                </div>
-                <div class="card">
-                    <i class="fas fa-stethoscope card-icon"></i>
-                    <h3>Oral Surgery</h3>
-                    <p>Expert extractions and surgical procedures with a focus on patient comfort.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Testimonials Slider -->
-    <section class="section-padding reveal">
-        <div class="container">
-            <div class="text-center reveal delay-1">
-                <h2 class="heading-md">What Our Patients Say</h2>
-            </div>
-            <div class="card-grid">
-                <div class="card">
-                    <p>"The best dental experience I've had in Mumbai. The clinic is beautiful and the doctors are extremely professional."</p>
-                    <div style="margin-top: 20px; display: flex; align-items: center; gap: 10px;">
-                        <div style="width: 40px; height: 40px; background: var(--primary-teal); border-radius: 50%;"></div>
-                        <strong>Rahul M.</strong>
+        <section class="info-strip">
+            <div class="container">
+                <div class="glass-card strip-inner reveal">
+                    <div class="info-item" style="display: flex; align-items: center; gap: 1rem;">
+                        <i class="fas fa-map-marker-alt" style="font-size: 1.5rem; color: var(--primary);"></i>
+                        <div>
+                            <h4 style="font-size: 0.8rem; text-transform: uppercase; color: var(--text-muted);">Clinic Location</h4>
+                            <p style="font-weight: 700;">Apollo Bandar, Colaba</p>
+                        </div>
                     </div>
-                </div>
-                <div class="card">
-                    <p>"Got my implants done at ZenSmile. Highly recommend for anyone looking for premium care in Colaba."</p>
-                    <div style="margin-top: 20px; display: flex; align-items: center; gap: 10px;">
-                        <div style="width: 40px; height: 40px; background: var(--primary-teal); border-radius: 50%;"></div>
-                        <strong>Sneha K.</strong>
+                    <div class="info-item" style="display: flex; align-items: center; gap: 1rem;">
+                        <i class="fas fa-clock" style="font-size: 1.5rem; color: var(--primary);"></i>
+                        <div>
+                            <h4 style="font-size: 0.8rem; text-transform: uppercase; color: var(--text-muted);">Opening Hours</h4>
+                            <p style="font-weight: 700;">10:00 AM – 10:00 PM</p>
+                        </div>
+                    </div>
+                    <div class="info-item" style="display: flex; align-items: center; gap: 1rem;">
+                        <i class="fas fa-calendar-check" style="font-size: 1.5rem; color: var(--primary);"></i>
+                        <div>
+                            <h4 style="font-size: 0.8rem; text-transform: uppercase; color: var(--text-muted);">Get Directions</h4>
+                            <p><a href="https://maps.app.goo.gl/ycZhYj2VuiGeoVY66" style="color: var(--primary); font-weight: 700;">Google Maps <i class="fas fa-external-link-alt"></i></a></p>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <div class="footer-grid">
-                <div class="footer-brand">
-                    <div class="logo">
-                        <i class="fas fa-tooth" style="color: var(--primary-teal); font-size: 1.5rem;"></i>
-                        <span class="logo-text">ZenSmile</span>
-                    </div>
-                    <p>Refining dental excellence in the heart of South Mumbai. ZenSmile is dedicated to providing elite dental surgery and cosmetic care.</p>
+        <section class="section-padding" id="specialities">
+            <div class="container">
+                <div class="text-center reveal">
+                    <h2 style="font-size: 2.25rem; color: var(--primary-dark); margin-bottom: 1rem;">Our Specialities</h2>
+                    <p style="color: var(--text-muted);">Expert care for every smile, from routine checkups to transformations.</p>
                 </div>
-                <div class="footer-section">
-                    <h4>Quick Links</h4>
-                    <ul class="footer-links">
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="about.html">About Clinic</a></li>
-                        <li><a href="services.html">Services</a></li>
-                        <li><a href="gallery.html">Smile Stories</a></li>
+                <div class="card-grid">
+                    <div class="glass-card reveal">
+                        <i class="fas fa-teeth card-icon" style="font-size: 2.5rem; color: var(--primary); margin-bottom: 1.5rem; display: block;"></i>
+                        <h3>Cosmetic Dentistry</h3>
+                        <p>Smile design, teeth whitening, and porcelain veneers for a flawless look.</p>
+                    </div>
+                    <div class="glass-card reveal">
+                        <i class="fas fa-tooth card-icon" style="font-size: 2.5rem; color: var(--primary); margin-bottom: 1.5rem; display: block;"></i>
+                        <h3>Dental Implants</h3>
+                        <p>Permanent and natural-looking solutions for missing or damaged teeth.</p>
+                    </div>
+                    <div class="glass-card reveal">
+                        <i class="fas fa-align-center card-icon" style="font-size: 2.5rem; color: var(--primary); margin-bottom: 1.5rem; display: block;"></i>
+                        <h3>Orthodontics</h3>
+                        <p>Precision alignment with traditional braces and modern clear aligner technology.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section-padding bg-soft">
+            <div class="container grid-2" style="display: grid; grid-template-columns: 1fr; gap: 3rem; align-items: center;">
+                <div class="reveal">
+                    <img src="zensmile_dentist_work_1773650717336.png" alt="Dentist working" class="rounded-lg shadow-soft" style="border-radius: var(--radius-lg);">
+                </div>
+                <div class="reveal">
+                    <h2 style="font-size: 2rem; color: var(--primary-dark); margin-bottom: 1.5rem;">Why Choose ZenSmile?</h2>
+                    <p style="margin-bottom: 1.5rem;">Our team of specialists offers a comprehensive range of treatments designed to meet all your needs in a comfortable environment.</p>
+                    <ul style="list-style: none; display: grid; gap: 1rem;">
+                        <li style="display: flex; gap: 10px; align-items: center;"><i class="fas fa-check-circle" style="color: var(--primary);"></i> Advanced Medical Equipment</li>
+                        <li style="display: flex; gap: 10px; align-items: center;"><i class="fas fa-check-circle" style="color: var(--primary);"></i> Strict Hygiene Protocols</li>
+                        <li style="display: flex; gap: 10px; align-items: center;"><i class="fas fa-check-circle" style="color: var(--primary);"></i> Experienced Specialists</li>
                     </ul>
                 </div>
-                <div class="footer-section">
-                    <h4>Contact Us</h4>
-                    <p><i class="fas fa-map-marker-alt"></i> Shop No. 9, Besides Jain Temple, Pestonji Street, Apollo Bandar, Colaba, Mumbai 400005</p>
-                    <p><i class="fas fa-phone"></i> +91 000 000 0000</p>
-                    <p><i class="fas fa-clock"></i> 10:00 AM – 10:00 PM</p>
+            </div>
+        </section>
+    </main>
+
+    <footer class="section-padding" style="background: var(--bg-soft);">
+        <div class="container">
+            <div class="footer-grid" style="display: grid; grid-template-columns: 1fr; gap: 3rem;">
+                <div>
+                    <a href="#" class="logo" style="margin-bottom: 1rem; display: flex;">
+                        <i class="fas fa-tooth"></i>
+                        <span class="font-heading">ZenSmile</span>
+                    </a>
+                    <p>Refining dental excellence in the heart of South Mumbai.</p>
+                </div>
+                <div style="display: grid; gap: 1rem;">
+                    <h4>Quick Links</h4>
+                    <a href="services.html">Our Services</a>
+                    <a href="about.html">About Clinic</a>
+                    <a href="contact.html">Book Appointment</a>
                 </div>
             </div>
-            <div class="footer-bottom">
-                <p>&copy; 2024 ZenSmile Dental Clinic. All Rights Reserved. | <a href="#">Privacy Policy</a> | <a href="#">Terms</a></p>
+            <div style="margin-top: 4rem; padding-top: 2rem; border-top: 1px solid rgba(0,0,0,0.1); text-align: center; font-size: 0.9rem; color: var(--text-muted);">
+                &copy; 2024 ZenSmile Dental Clinic. All Rights Reserved.
             </div>
         </div>
     </footer>
 
-    <!-- Chatbot Script Integration -->
     <script src="zenbot.js"></script>
     <script src="main.js"></script>
 </body>
