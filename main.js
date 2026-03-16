@@ -1,51 +1,66 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // 1. Mobile Menu Toggle
-    const menuToggle = document.getElementById('menu-toggle');
-    const mobileNav = document.getElementById('mobile-nav');
+    // 1. Scroll Progress Bar
+    const progressContainer = document.createElement('div');
+    progressContainer.className = 'scroll-progress';
+    document.body.appendChild(progressContainer);
+
+    window.addEventListener('scroll', () => {
+        const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+        const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+        const scrolled = (winScroll / height) * 100;
+        progressContainer.style.width = scrolled + "%";
+    });
+
+    // 2. Mobile Menu Toggle
+    const menuTrigger = document.getElementById('menu-toggle');
+    const navLinks = document.querySelector('.nav-links');
     
-    if (menuToggle && mobileNav) {
-        menuToggle.addEventListener('click', () => {
-            menuToggle.classList.toggle('active');
-            mobileNav.classList.toggle('active');
-            document.body.style.overflow = mobileNav.classList.contains('active') ? 'hidden' : 'auto';
+    if (menuTrigger && navLinks) {
+        menuTrigger.addEventListener('click', () => {
+            menuTrigger.classList.toggle('active');
+            navLinks.classList.toggle('active');
+            document.body.style.overflow = navLinks.classList.contains('active') ? 'hidden' : 'auto';
         });
 
         // Close menu when clicking link
-        mobileNav.querySelectorAll('a').forEach(link => {
+        navLinks.querySelectorAll('a').forEach(link => {
             link.addEventListener('click', () => {
-                menuToggle.classList.remove('active');
-                mobileNav.classList.remove('active');
+                menuTrigger.classList.remove('active');
+                navLinks.classList.remove('active');
                 document.body.style.overflow = 'auto';
             });
         });
     }
 
-    // 2. Smooth Scrolling for all links
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-            e.preventDefault();
-            const target = document.querySelector(this.getAttribute('href'));
-            if (target) {
-                const headerOffset = 80;
-                const elementPosition = target.getBoundingClientRect().top;
-                const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+    // 3. Reveal on Scroll (Intersection Observer)
+    const observerOptions = {
+        threshold: 0.15,
+        rootMargin: '0px 0px -50px 0px'
+    };
 
-                window.scrollTo({
-                    top: offsetPosition,
-                    behavior: "smooth"
-                });
+    const revealObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                // Optional: stop observing once visible
+                // revealObserver.unobserve(entry.target);
             }
         });
-    });
+    }, observerOptions);
 
-    // 3. ZenBot Safety Adjust (Ensure no occlusion)
-    function adjustZenBot() {
-        const bot = document.getElementById('zen-chat-container');
-        if (bot) {
-            bot.style.bottom = '20px';
-            bot.style.right = '20px';
-            bot.style.zIndex = '900'; // Below mobile menu
-        }
+    document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+    // 4. Preloader Handling
+    const preloader = document.getElementById('preloader');
+    if (preloader) {
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                preloader.style.opacity = '0';
+                setTimeout(() => {
+                    preloader.style.display = 'none';
+                    document.body.classList.remove('loading');
+                }, 600);
+            }, 800);
+        });
     }
-    setTimeout(adjustZenBot, 2000);
 });
