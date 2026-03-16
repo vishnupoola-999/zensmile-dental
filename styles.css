@@ -249,6 +249,19 @@ a {
     z-index: 1;
 }
 
+.nav-links li a {
+    font-weight: 500;
+    font-size: 0.95rem;
+    padding: 0.5rem 1rem;
+    border-radius: 50px;
+}
+
+.nav-links li a.active {
+    background: var(--primary-light);
+    color: var(--primary);
+    font-weight: 700;
+}
+
 .hero h1 {
     font-size: 2.5rem;
     margin-bottom: 1rem;
