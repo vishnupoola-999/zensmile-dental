@@ -7,7 +7,12 @@
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
-<body>
+<body class="loading">
+    <!-- Preloader -->
+    <div id="preloader">
+        <div class="loader-logo">ZenSmile</div>
+        <div class="loader-bar"></div>
+    </div>
     <!-- Navbar -->
     <nav class="navbar">
         <div class="container nav-container">
@@ -22,6 +27,11 @@
                 <li><a href="gallery.html">Smile Gallery</a></li>
                 <li><a href="contact.html">Contact</a></li>
             </ul>
+            <div class="menu-toggle" id="menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
             <a href="contact.html" class="btn btn-primary">Book Now</a>
         </div>
     </nav>
@@ -87,5 +97,6 @@
 
     <!-- Chatbot Script Integration -->
     <script src="zenbot.js"></script>
+    <script src="main.js"></script>
 </body>
 </html>
