@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | ZenSmile Dental Clinic Colaba</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <i class="fas fa-tooth" style="color: var(--primary-teal); font-size: 1.8rem;"></i>
+                <span class="logo-text">ZenSmile</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="gallery.html">Smile Gallery</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <header class="page-header">
+        <div class="container">
+            <h1 class="heading-lg">Book Your Appointment</h1>
+            <p>Ready for a brighter smile? Visit us in the heart of Colaba.</p>
+        </div>
+    </header>
+
+    <section class="section-padding">
+        <div class="container grid-2">
+            <div class="contact-form-container">
+                <h2 class="heading-md">Schedule a Consultation</h2>
+                <form class="appointment-form">
+                    <div class="form-group">
+                        <input type="text" placeholder="Full Name" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="tel" placeholder="Phone Number" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" placeholder="Email Address">
+                    </div>
+                    <div class="form-group">
+                        <select required>
+                            <option value="">Select Treatment</option>
+                            <option value="checkup">Routine Check-up</option>
+                            <option value="cosmetic">Cosmetic Dentistry</option>
+                            <option value="implants">Dental Implants</option>
+                            <option value="ortho">Orthodontics</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <textarea placeholder="Tell us about your dental concern..." rows="4"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary w-100">Send Request</button>
+                </form>
+            </div>
+            <div class="contact-info">
+                <h2 class="heading-md">Find Us</h2>
+                <div class="info-block">
+                    <p><strong>Address:</strong><br>Shop No. 9, Besides Jain Temple, Pestonji Street, near Nariman House, Apollo Bandar, Colaba, Mumbai, Maharashtra 400005</p>
+                    <p><strong>Hours:</strong><br>Monday – Sunday: 10:00 AM – 10:00 PM</p>
+                    <p><strong>Phone:</strong><br>+91 000 000 0000</p>
+                </div>
+                <div class="map-container rounded-card">
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3774.156550608518!2d72.8295625!3d18.9254843!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7d1c25a072483%3A0xe6734794827d9217!2sZenSmile%20Dental%20Clinic!5e0!3m2!1sen!2sin!4v1700000000000" 
+                        width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-bottom">
+                <p>&copy; 2024 ZenSmile Dental Clinic.</p>
+            </div>
+        </div>
+    </footer>
+    <!-- Chatbot Script Integration -->
+    <script src="zenbot.js"></script>
+</body>
+</html>
