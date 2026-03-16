@@ -11,24 +11,38 @@ document.addEventListener('DOMContentLoaded', () => {
         progressContainer.style.width = scrolled + "%";
     });
 
-    // 2. Mobile Menu Toggle
-    const menuTrigger = document.getElementById('menu-toggle');
+    // 2. Mobile Nav Horizontal Handling
     const navLinks = document.querySelector('.nav-links');
-    
-    if (menuTrigger && navLinks) {
-        menuTrigger.addEventListener('click', () => {
-            menuTrigger.classList.toggle('active');
-            navLinks.classList.toggle('active');
-            document.body.style.overflow = navLinks.classList.contains('active') ? 'hidden' : 'auto';
-        });
-
-        // Close menu when clicking link
+    if (navLinks) {
+        // Horizontal scroll is handled by CSS, but we can add active class logic
         navLinks.querySelectorAll('a').forEach(link => {
-            link.addEventListener('click', () => {
-                menuTrigger.classList.remove('active');
-                navLinks.classList.remove('active');
-                document.body.style.overflow = 'auto';
-            });
+            if (link.href === window.location.href) {
+                link.classList.add('active');
+            }
+        });
+    }
+
+    // 3. ZenCursor "Shining" Answers
+    const zenCursor = document.getElementById('zen-cursor');
+    const zenBubble = document.getElementById('zen-bubble');
+    const answers = [
+        "Need a dentist? Book online!",
+        "Specialists in South Mumbai at your service.",
+        "We're open 10 AM to 10 PM daily.",
+        "Have any dental pain? Call us now!",
+        "Check out our smile gallery!"
+    ];
+    let answerIndex = 0;
+
+    if (zenCursor && zenBubble) {
+        zenCursor.addEventListener('click', () => {
+            zenBubble.textContent = answers[answerIndex];
+            zenBubble.classList.add('active');
+            answerIndex = (answerIndex + 1) % answers.length;
+            
+            setTimeout(() => {
+                zenBubble.classList.remove('active');
+            }, 3000);
         });
     }
 
