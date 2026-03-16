@@ -3,99 +3,76 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Smile Gallery | ZenSmile Dental Clinic Colaba</title>
+    <title>Gallery | ZenSmile Dental Clinic</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body class="loading">
-    <!-- Preloader -->
     <div id="preloader">
-        <div class="loader-logo">ZenSmile</div>
-        <div class="loader-bar"></div>
+        <div class="loader-content">
+            <div class="loader-text">ZenSmile</div>
+            <div class="loader-bar"></div>
+        </div>
     </div>
-    <!-- Navbar -->
     <nav class="navbar">
-        <div class="container nav-container">
+        <div class="container nav-flex">
             <a href="index.html" class="logo">
-                <i class="fas fa-tooth" style="color: var(--primary-teal); font-size: 1.8rem;"></i>
-                <span class="logo-text">ZenSmile</span>
+                <i class="fas fa-tooth"></i>
+                <span class="font-heading">ZenSmile</span>
             </a>
             <ul class="nav-links">
                 <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About</a></li>
                 <li><a href="services.html">Services</a></li>
-                <li><a href="gallery.html">Smile Gallery</a></li>
-                <li><a href="contact.html">Contact</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="contact.html">Appointment</a></li>
             </ul>
-            <div class="menu-toggle" id="menu-toggle">
+            <div class="menu-trigger" id="menu-toggle">
                 <span></span>
                 <span></span>
                 <span></span>
             </div>
-            <a href="contact.html" class="btn btn-primary">Book Now</a>
         </div>
     </nav>
 
-    <header class="page-header">
+    <main class="section-padding" style="padding-top: 8rem;">
         <div class="container">
-            <h1 class="heading-lg">Smile Transformations</h1>
-            <p>Real results from real patients at ZenSmile Dental Clinic.</p>
-        </div>
-    </header>
+            <header class="text-center reveal" style="margin-bottom: 4rem;">
+                <h1 style="font-size: 2.5rem; color: var(--primary-dark);">Smile Gallery</h1>
+                <p style="color: var(--text-muted);">Real transformations, real smiles. See the results of our expert care.</p>
+            </header>
 
-    <section class="section-padding">
-        <div class="container">
-            <div class="gallery-grid">
-                <div class="gallery-item rounded-card">
-                    <img src="zensmile_smiling_man_1773650698401.png" alt="Smile Transformation">
-                    <div class="gallery-overlay">
-                        <span>Full Smile Design</span>
+            <div class="card-grid">
+                <div class="glass-card reveal" style="padding: 10px;">
+                    <img src="zensmile_smiling_man_1773650698401.png" alt="Smile 1" style="width: 100%; height: 250px; object-fit: cover; border-radius: var(--radius-md);">
+                    <div style="padding: 1.5rem;">
+                        <h3>Full Smile Design</h3>
+                        <p style="font-size: 0.9rem; color: var(--text-muted);">Complete reconstruction using advanced porcelain veneers.</p>
                     </div>
                 </div>
-                <div class="gallery-item rounded-card">
-                    <img src="zensmile_hero_clinic_1773650674306.png" alt="Clinic Interior">
-                    <div class="gallery-overlay">
-                        <span>Our Platinum Suite</span>
+                <div class="glass-card reveal" style="padding: 10px;">
+                    <img src="zensmile_braces_aligners_1773651110495.png" alt="Smile 2" style="width: 100%; height: 250px; object-fit: cover; border-radius: var(--radius-md);">
+                    <div style="padding: 1.5rem;">
+                        <h3>Clear Aligners</h3>
+                        <p style="font-size: 0.9rem; color: var(--text-muted);">Invisibly straightening teeth for a more confident look.</p>
                     </div>
                 </div>
-                <div class="gallery-item rounded-card">
-                    <img src="zensmile_dentist_work_1773650717336.png" alt="Doctor at Work">
-                    <div class="gallery-overlay">
-                        <span>Precision Care</span>
-                    </div>
-                </div>
-                <div class="gallery-item rounded-card">
-                    <img src="zensmile_pediatric_dentistry_1773651093815.png" alt="Pediatric Care">
-                    <div class="gallery-overlay">
-                        <span>Kids Dentistry</span>
-                    </div>
-                </div>
-                <div class="gallery-item rounded-card">
-                    <img src="zensmile_braces_aligners_1773651110495.png" alt="Orthodontics">
-                    <div class="gallery-overlay">
-                        <span>Clear Aligners</span>
-                    </div>
-                </div>
-                <div class="gallery-item rounded-card">
-                    <img src="zensmile_modern_tech_1773651126969.png" alt="Modern Tech">
-                    <div class="gallery-overlay">
-                        <span>Advanced Diagnostics</span>
+                <div class="glass-card reveal" style="padding: 10px;">
+                    <img src="zensmile_hero_clinic_1773650674306.png" alt="Clinic" style="width: 100%; height: 250px; object-fit: cover; border-radius: var(--radius-md);">
+                    <div style="padding: 1.5rem;">
+                        <h3>Our Modern Suite</h3>
+                        <p style="font-size: 0.9rem; color: var(--text-muted);">Relaxing environment designed for your comfort.</p>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
+    </main>
 
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <div class="footer-bottom">
-                <p>&copy; 2024 ZenSmile Dental Clinic.</p>
-            </div>
+    <footer class="section-padding" style="background: var(--bg-soft);">
+        <div class="container text-center">
+            <p>&copy; 2024 ZenSmile Dental Clinic. All Rights Reserved.</p>
         </div>
     </footer>
-
-    <!-- Chatbot Script Integration -->
     <script src="zenbot.js"></script>
     <script src="main.js"></script>
 </body>
