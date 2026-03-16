@@ -69,10 +69,29 @@
         </div>
     </footer>
     <div class="zen-cursor-container">
-        <div class="zen-answer-bubble" id="zen-bubble">Hi, I'm Nurse Sarah! Tap me to talk.</div>
-        <div class="zen-cursor" id="zen-cursor">
-            <!-- Nurse face handled by CSS background -->
+        <!-- Chat Window -->
+        <div class="chat-window" id="chat-window">
+            <div class="chat-header">
+                <img src="zensmile_nurse_icon.png" alt="Nurse Sarah">
+                <div>
+                    <div style="font-weight: 700; font-size: 0.9rem;">Nurse Sarah</div>
+                    <div style="font-size: 0.7rem; opacity: 0.8;">Online | ZenSmile Assistant</div>
+                </div>
+                <i class="fas fa-times" id="close-chat" style="margin-left: auto; cursor: pointer;"></i>
+            </div>
+            <div class="chat-history" id="chat-history">
+                <div class="msg msg-bot">Hi! I'm Nurse Sarah. How can I help you today?</div>
+            </div>
+            <div class="chat-input-area">
+                <input type="text" id="chat-input" placeholder="Type your message...">
+                <button class="chat-send-btn" id="chat-send">
+                    <i class="fas fa-paper-plane"></i>
+                </button>
+            </div>
         </div>
+
+        <!-- Chat Toggle -->
+        <div class="zen-cursor" id="zen-cursor"></div>
     </div>
     <script src="main.js"></script>
 </body>
